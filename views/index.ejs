@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <title>URL Shrinker</title>
+    <style>
+      * {
+        font-family: "Open Sans", sans-serif !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="container text-center my-5">URL Shrinker</h1>
+
+    <form
+      action="/shortUrl"
+      class="form-inline container my-5 w-100 d-flex justify-content-center"
+      method="POST"
+    >
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="fullUrl" class="sr-only">URL</label>
+        <input
+          required
+          type="url"
+          class="form-control"
+          name="fullUrl"
+          id="fullUrl"
+          placeholder="Enter your URL..."
+        />
+      </div>
+      <button type="submit" class="btn btn-primary mb-2">Shrink</button>
+    </form>
+
+    <table
+      class="table table-borderless container table-hover border shadow-lg rounded"
+    >
+      <thead>
+        <tr>
+          <th scope="col">URL</th>
+          <th scope="col">shrinked URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% ShortUrls.forEach(ShortUrl => { %>
+        <tr>
+          <td>
+            <a
+              href=" <%=ShortUrl.full%>"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <%=ShortUrl.full%></a
+            >
+          </td>
+          <td>
+            <a
+              href="<%=ShortUrl.short %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><%=ShortUrl.short %></a
+            >
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>
