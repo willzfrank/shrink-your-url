@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="./assets/url-shortener.gif" alt="Project logo"></a>
+ <img width=100% height=200px src="./assets/url-shortener.gif" alt="Project logo"></a>
 </p>
 
 <h3 align="center">url-shortener</h3>
